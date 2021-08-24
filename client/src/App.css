@@ -499,3 +499,36 @@ li.ProseMirror-selectednode:after {
 }
 
 .ProseMirror p { margin-bottom: 1em }
+
+
+.experiment-textarea {
+	/* height: 100px; */
+	rows: "3";
+	columns: "60";
+	wrap: "soft";
+}
+
+.experiment-lbl {
+	font-size: 12px;
+	margin: 5px;
+
+}
+
+.experiment-input {
+	width: 400px;
+	margin: 5px;
+	font-size: 12px;
+	padding: 5px;
+}
+
+.error-text {
+	font-size: 10px;
+	color: red;
+}
+
+.headerLinks {
+	font-size: smaller;
+	color: orange;
+	margin: 5px;
+	padding: 5px;
+}
