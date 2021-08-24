@@ -8,17 +8,17 @@ console.log(props);
 
 const deleteExperiment = (experimentId) =>{
     axios.delete("http://localhost:8000/api/experiment/" +experimentId)
-    .then((res) => {
-        console.log(res.data);
-      navigate('/');
-    })
-    .catch((err) => console.log(err) )
-}
+        .then((res) => {
+            console.log(res.data);
+            navigate('/');
+        })
+        .catch((err) => console.log(err) )
+    }
 useEffect(() => {
         axios.get("http://localhost:8000/api/experiment/" + props.id)
             .then(res =>{
-               console.log(res.data)
-               setDetail(res.data)
+                console.log(res.data)
+                setDetail(res.data)
             } )
     }, [])
     return (
