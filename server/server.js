@@ -1,16 +1,33 @@
-const express = require('express');
+// load .env file data --------------------------------------
+require("dotenv").config();
 
-const app = express();
+// import express and other libraries. ----------------------
 const cors = require('cors');
+const express = require('express');
+const app = express();
+const cookieParser = require('cookie-parser');
+const port = process.env.MY_PORT;
 
+// configure express app server ----------------------------
 app.use(express.json());
-app.use(express.urlencoded({extended:true}));
-app.use(cors());
+app.use(express.urlencoded({extended: true}));
+app.use(cors({
+    credentials: true,
+    origin: "http://localhost:3000"
+}));
+app.use(cookieParser());
 
+
+// configure mongoose to connect -----------------------------
 require('./config/mongoose.config');
 
-require('./routes/experiment.route')(app);
+// add routes to listen --------------------------------------
+const experimentRoutes = require('./routes/experiment.route');    /// check if this is the right name
+experimentRoutes(app);
 
-app.listen(8000,() => {
-    console.log("Your port is running");
-});
+require('./routes/user.routes')(app);           // this shud be fine coz using for login.
+// require('./routes/dashboard.routes')(app);        // dashboard here, check the name for this one.
+
+app.listen(port, () => {
+    console.log("The express app server is listening on port: ", port);
+})

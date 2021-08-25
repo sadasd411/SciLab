@@ -1,74 +1,89 @@
-const SciLab = require('../models/experiment.model');
+// require("mongoose");
 
-module.exports={
-    helloworld:(req,res)=>{
-        return res.json("Hello world Devi!");
-    },
-    getAll:(req,res) =>{
-        SciLab.find({})
-        .sort({type:"ascending"})
-        .then((allExperiment) => {
-            console.log(allExperiment)
-            res.json(allExperiment)
-        })
-        .catch((err) => res.json(err));
-    },
-    
-    details:(req,res) =>{
-        SciLab.findById({_id:req.params.id})
-        .then((details) => {
-            console.log(details)
-            res.json(details)
-        })
-        .catch((err) => res.json(err));
-    },
-  
-    create: (req, res) => {
-        console.log(req.body);
-        SciLab.create(req.body)
-          .then((newObj) => {
-            console.log(newObj);
-            // res.json is the equivalent of a return from the function
-            res.json(newObj);
-          })
-          .catch((err) => {
-            console.log("in author create");
-            console.log(err);
-            res.json(err);
-        });
-    },
-    update: (req, res) => {
-      console.log(req.body);
-      SciLab.findByIdAndUpdate(req.params.id,req.body,
-         { new:true,
-        //  runValidators:true,
-          context: 'query'
-      })
-        .then((updated) => {
-          console.log(updated);
-          // res.json is the equivalent of a return from the function
-          res.json(updated);
-        })
-        .catch((err) => {
-          console.log("in  update");
-          console.log(err);
-          // res.json is the equivalent of a return from the function
-         res.json(err);
-      });
-  },
-  delete: (req, res) => {
-    console.log(req.body);
-    SciLab.findByIdAndDelete(req.params.id)
-      .then((deleted) => {
-        console.log(deleted);
-        // res.json is the equivalent of a return from the function
-        res.json(deleted);
-      })
-      .catch((err) => {
-        console.log("in Product delete");
-        console.log(err);
-        // res.json is the equivalent of a return from the function
-        res.json(err);
+// const Experiment = require('../models/experiment.model');
+const Experiment = require('../models/experiment.model');
+
+// route:  get all experiments
+module.exports.getAll = (req, res) => {
+  console.log("inside getall");
+
+  // route: get all experiments
+  Experiment.find()
+    .then((allExperiments) => {
+      console.log("all Experiments: ", allExperiments);
+      res.json(allExperiments);
+    })
+    .catch((err) => {
+      console.log("err: ", err);
+      res.json(err);
     });
-},
+};
+
+// route:  create one experiment
+module.exports.create = (req, res) => {
+  console.log("inside create");
+  console.log("req.body: ", req.body);
+
+  Experiment.create(req.body) 
+    .then ((newExperiment) => {
+      console.log("newExperiment: ", newExperiment);
+      res.json(newExperiment);
+    })
+    .catch((err) => {
+      console.log("err: ", err);
+      res.status(400).json(err);
+    });
+};
+
+// route: display one experiment
+
+module.exports.getOne = (req, res) => {
+  console.log("inside getOne");
+  console.log("looking for id: ", req.params.id);
+
+  Experiment.findById (req.params.id)
+    .then((oneExperiment) => {
+      console.log("One Experiment: ", oneExperiment);
+      res.json(oneExperiment);
+    })
+    .catch((err) => {
+      console.log("err: ", err);
+      res.status(400).json(err);
+    });
+};
+
+// route: Edit one experiment
+
+module.exports.update = (req, res) => {
+  console.log("inside edit/update");
+  console.log("req.body: ", req.body);
+
+  Experiment.findByIdAndUpdate(req.params.id, req.body, {
+    new: true,
+    runValidators: true,
+  })
+    .then((updatedExperiment) => {
+      console.log("updatedExperiment: ", updatedExperiment);
+      res.json(updatedExperiment);
+    })
+    .catch((err) => {
+      console.log(err);
+      res.status(400).json(err);
+    });
+};
+
+// route:  delete one experiment
+module.exports.delete = (req, res) => {
+  console.log("inside delete");
+  console.log("looking for id: ", req.params.id);
+
+  Experiment.findByIdAndDelete(req.params.id)
+    .then((deletedExperiment) => {
+      console.log("deletedExperiment: ", deletedExperiment);
+      res.json(deletedExperiment);
+    })
+    .catch((err) => {
+      console.log(err);
+      res.status(400).json(err);
+    });
 }
