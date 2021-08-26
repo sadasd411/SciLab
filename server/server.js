@@ -1,3 +1,4 @@
+
 // load .env file data --------------------------------------
 require("dotenv").config();
 
@@ -10,6 +11,7 @@ const port = process.env.MY_PORT;
 
 // configure express app server ----------------------------
 app.use(express.json());
+
 app.use(express.urlencoded({extended: true}));
 app.use(cors({
     credentials: true,
