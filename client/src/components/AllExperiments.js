@@ -45,7 +45,7 @@ const AllExperiments = (props) => {
                     <Link className="create-new" to = "/experiments/new" >New Procedure</Link>
                     <Link className="create-new" to = "/experiments/new" >New Report</Link>
                 </p>
-                <h3>All Experiments</h3>
+                {/* <h4>All Experiments</h4> */}
                 <table>
                 <thead>
                         <th>Exp #</th>
@@ -59,10 +59,10 @@ const AllExperiments = (props) => {
                             allExperiments.map((experiment, index) => (  
                                 <tr key={index}>
                                     <td>
-                                        <Link to={"/experiments/" + experiment._id}> {experiment.experimentNumber} </Link>
+                                        {experiment.experimentNumber}
                                     </td>
                                     <td>
-                                        {experiment.experimentName} 
+                                        {experiment.experimentName}
                                     </td>
                                     <td>
                                         {experiment.responsibleUser}
