@@ -2,7 +2,7 @@
 import React, { useState } from "react";
 import axios from "axios";
 import { Links, navigate } from '@reach/router';
-// import Navigator from "./Navigator";
+import Navigator from "./Navigator";
 
 const RegisterUser = props => {
     const [confirmReg, setConfirmReg] = useState("");
@@ -13,6 +13,7 @@ const RegisterUser = props => {
     const [ user, setUser ] = useState({
         firstName: "",
         lastName: "",
+        userName: "",
         email: "", 
         password: "", 
         confirmPassword: "",
@@ -38,7 +39,7 @@ const RegisterUser = props => {
             //    unless withCredentials is set to true before making the request
             withCredentials: true,
         })
-        .then(res => {
+        .then((res) => {
             console.log(res.data);
 
             // when we successfully created the account, reset state for registration form
@@ -46,6 +47,7 @@ const RegisterUser = props => {
             setUser({
             firstName: "",
             lastName: "", 
+            userName: "",
             email: "", 
             password: "", 
             confirmPassword: "",
@@ -66,7 +68,7 @@ const RegisterUser = props => {
     return (
         <div>
             <div className = "leftNav">
-                {/* <Navigator /> */}
+                <Navigator />
             </div>
             <div className = "centerPage">
                 <h2>Register</h2>
@@ -75,7 +77,7 @@ const RegisterUser = props => {
                     <h4 style={{color: "green"}}>{confirmReg}</h4>
                     : null
                 }
-                <form onSubmit={register}>
+                <form className = "loginBox" onSubmit={register}>
                     <div>
                         <label>firstName</label>
                         {
@@ -101,6 +103,20 @@ const RegisterUser = props => {
                             type="text"
                             name="lastName"
                             value={user.lastName}
+                            onChange={(e) => handleChange(e)}
+                        />
+                    </div>
+                    <div>
+                        <label>userName</label>
+                        {
+                            errs.userName ? 
+                            <span className="error-text">{ errs.userName.message }</span>
+                            : null
+                        }
+                        <input
+                            type="text"
+                            name="userName"
+                            value={user.userName}
                             onChange={(e) => handleChange(e)}
                         />
                     </div>
@@ -147,7 +163,7 @@ const RegisterUser = props => {
                     />
                     </div>
                     <div className="center">
-                        <button 
+                        <button className = "loginBtn"
                             type="submit"
                         >Register Me</button>
                     </div>

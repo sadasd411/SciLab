@@ -196,7 +196,7 @@ const EditExperiment = (props) => {
                                 checked = {instrumentsRequired}                       // changed 'value' to 'checked'
                                 onChange= {(e) => setInstrumentsRequired(e.target.value)}
                             >
-                                <option value = "" ></option>
+                                {/* <option value = "" ></option> */}
                                 {
                                     allInstruments.map((instrumentType, index) => (
                                         <option value = {instrumentType} key={index}>{instrumentType}</option>
@@ -220,7 +220,7 @@ const EditExperiment = (props) => {
                                 checked = {status}
                                 onChange= {(e) => setStatus(e.target.value)}
                             >
-                                <option value = ""></option>
+                                {/* <option value = ""></option> */}
                                 {
                                     allStatus.map((statusType, index) => (
                                         <option value = {statusType} key={index}>{statusType}</option>
@@ -244,7 +244,7 @@ const EditExperiment = (props) => {
                                 checked = {procedure}
                                 onChange= {(e) => setProcedure(e.target.value)}
                             >
-                                <option value = {procedure}></option>
+                                {/* <option value = {procedure}></option> */}
                                 {
                                     allProcedures.map((procedureType, index) => (
                                         <option value = {procedureType} key={index}>{procedureType}</option>

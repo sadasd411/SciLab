@@ -40,7 +40,7 @@ const AllExperiments = (props) => {
                 } */}
             </div>
             <div  className = "centerPage">
-                <p>
+                <p className = "linkParagraph">
                     <Link className="create-new" to = "/experiments/new" >New Experiment</Link>
                     <Link className="create-new" to = "/experiments/new" >New Procedure</Link>
                     <Link className="create-new" to = "/experiments/new" >New Report</Link>

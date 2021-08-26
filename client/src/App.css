@@ -539,7 +539,7 @@ li.ProseMirror-selectednode:after {
 	text-align: right;
 	/* margin: 5px;
 	padding: 5px; */
-	border-bottom: 1px solid darkgray;
+	/* border-bottom: 1px solid darkgray; */
 }
 
 .headerLinks {
@@ -579,7 +579,7 @@ li.ProseMirror-selectednode:after {
 	display: inline-block; 
 	vertical-align: top;
 	width: 100px; 
-	height: 300px;
+	height: 350px;
 	border-right: 1px solid black;
 	overflow-y: auto;
 }
@@ -587,7 +587,7 @@ li.ProseMirror-selectednode:after {
 	display: inline-block; 
 	vertical-align: top;
 	width: 550px;
-	height: 300px;
+	height: 350px;
 	overflow-y: auto;
 	margin-top: 5px;
 }
@@ -641,7 +641,7 @@ button {
 	border-radius: 5px;
 
 }
-.text-area {
+.experiment-textarea {
 	font-size: 10px;
 
 }
@@ -649,4 +649,18 @@ button {
 	background: lightgray;
 	font: 10px;
 	border-radius: 5px;;
+}
+.loginBox {
+	/* border: 1px solid darkgray; */
+	width: 300px;
+	margin: auto;
+	font-size: 10px;
+}
+.loginBtn {
+	border: 1px solid darkgray;
+	margin: 5px;
+	border-radius: 5px;
+}
+.linkParagraph {
+	margin-top: 5px;;
 }
