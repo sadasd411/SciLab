@@ -28,6 +28,7 @@ experimentRoutes(app);
 require('./routes/user.routes')(app);           // this shud be fine coz using for login.
 // require('./routes/dashboard.routes')(app);        // dashboard here, check the name for this one.
 
+// set up the server for listening
 app.listen(port, () => {
     console.log("The express app server is listening on port: ", port);
 })
