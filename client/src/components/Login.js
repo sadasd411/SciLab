@@ -2,10 +2,11 @@
 import React, { useState } from "react";
 import axios from "axios";
 import { Link, navigate } from '@reach/router';
-// import Navigator from "./Navigator";
+import Navigator from "./Navigator";
 
 const Login = (props) => {
     const {setUser} = props;
+    const [userName, setUserName] = useState("");
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const [errorMessage, setErrorMessage] = useState("");
@@ -15,6 +16,7 @@ const Login = (props) => {
         event.preventDefault();
         localStorage.clear();
         axios.post("http://localhost:8000/api/users/login", { 
+            userName: userName,
             email: email, 
             password: password,
             },
@@ -27,14 +29,15 @@ const Login = (props) => {
             .then((res) => {
                 console.log("res.data: ", res.data);
                 setUser(res.data);
+                localStorage.setItem('curUserName', res.data.userName);
+                localStorage.setItem('curUserEmail', res.data.userEmail);
                 navigate("/experiments/allExperiments");
                 
                 // (res.data.userEmail === "admin@scilab.com"         // come back to this later.
                 //     ?  navigate("/experiments/allExperiments")
                 //     :  navigate("/experiments/filteredExeriments")
                 // )
-                localStorage.setItem('curUserName', res.data.userLoggedIn);
-                localStorage.setItem('curUserEmail', res.data.userEmail);
+                
             })
             .catch(err => {
                 console.log(err.response);
@@ -50,12 +53,21 @@ const Login = (props) => {
     return (
     <div>
         <div className = "leftNav">
-            {/* <Navigator /> */}
+            <Navigator />
         </div>
         <div className = "centerPage">
             <h2>Login</h2>
             <p className="error-text">{errorMessage ? errorMessage : ""}</p>
-            <form onSubmit={login}>
+            <form className = "loginBox" onSubmit={login}>
+                <div>
+                    <label>Username</label>
+                    <input
+                        type="text"
+                        name="userName"
+                        value={userName}
+                        onChange={(e) => setUserName(e.target.value)}
+                    />
+                </div>
                 <div>
                     <label>Email</label>
                     <input
@@ -75,7 +87,7 @@ const Login = (props) => {
                     />
                 </div>
                 <div className="center">
-                    <button 
+                    <button className = "loginBtn"
                         type="submit"
                     >Sign In</button>
                 </div>

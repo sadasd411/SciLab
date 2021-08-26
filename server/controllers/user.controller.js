@@ -52,7 +52,7 @@ module.exports = {
                         .then((isPasswordValid) => {
                             if (isPasswordValid) {
                                 console.log("password is valid");
-                                console.log(userRecord);
+                                console.log("userRecord: ", userRecord);
                                 console.log(process.env.JWT_SECRET)   // don't send this back, cause this is secret, just use for testing
                                 // create a cookie, 'usertoken' is the name of the cookie
                                 // we can have in a single response multiple cookies. like key-value pairs
@@ -61,7 +61,8 @@ module.exports = {
                                     jwt.sign({     // this method (sign) will allow me to go in and decide what do I want
                                         // payload is the data I want to save
                                         user_id: userRecord._id,
-                                        email: userRecord.email
+                                        email: userRecord.email,
+                                        userName: userRecord.userName
                                     },
                                     process.env.JWT_SECRET),  // used to sign / hash the date in the cookie.  this is the secret key 
                                     {
@@ -72,7 +73,7 @@ module.exports = {
                                     )
                                 .json({ 
                                     message: "Successfully logged in", 
-                                    userLoggedIn: userRecord.username,
+                                    userLoggedIn: userRecord.userName,
                                     userEmail: userRecord.email
                                         })
                             } else {
