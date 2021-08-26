@@ -1,11 +1,9 @@
-const sciLabController = require('../controllers/experiment.controller')
-const sciLabProcedure = require('../controllers/procedure.controller')
+const ExperimentController = require('../controllers/experiment.controller');
 
 module.exports = (app) => {
-    app.get("/",sciLabController.helloworld);
-    app.get("/api/experiments", sciLabController.getAll);
-    app.get("/api/experiment/:id", sciLabController.details);
-    app.post("/api/experiment", sciLabController.create);
-    app.put("/api/experiment/:id", sciLabController.update);
-    app.delete("/api/experiment/:id", sciLabController.delete);
+    app.get("/api/experiments/allExperiments", ExperimentController.getAll);
+    app.post("/api/experiments/new", ExperimentController.create);
+    app.get("/api/experiments/:id", ExperimentController.getOne); 
+    app.put("/api/experiments/:id", ExperimentController.update);
+    app.delete("/api/experiments/:id", ExperimentController.delete);
 }

@@ -1,34 +1,42 @@
-import logo from './logo.svg';
+
 import './App.css';
 import Header from './components/Header'
-import List from './components/List'
-import Update from './components/Update'
-import Detail from './components/Details'
-import New from './components/New';
-import NewProcedure from './components/ProcedureNew'
 import { Router } from '@reach/router';
-import ListAllProcedures from './components/ProcedureList'
-import ProcedureEdit from './components/ProcedureEdit'
-import Dashboard from './components/Dashboard'
+import {useState} from 'react';
+import MainPage from './components/MainPage';
+import Login from './components/Login';
+import RegisterUser from './components/RegisterUser';
+import ExperimentDetail from './components/ExperimentDetail';
+import CreateExperiment from './components/CreateExperiment';
+import EditExperiment from './components/EditExperiment';
+import AllExperiments from './components/AllExperiments';
+import DeleteExperiment from './components/DeleteExperiment';
+
 
 
 function App() {
+  const [email, setEmail] = useState("");
+  const [user, setUser] = useState({});
+  const [ curUserName, setCurUserName ] = useState(localStorage.getItem('curUserName'));
+  const [ curUserEmail, setCurUserEmail ] = useState(localStorage.getItem('curUserEmail'));
+
+
   return (
     <div className="App">
-     {/* <Header></Header>
-     <List></List> */}
-     <Header></Header>
-     
-     <Dashboard path = "/"></Dashboard>
-     <ListAllProcedures path = "/ "></ListAllProcedures>
-     <Router>
-       <NewProcedure path ="/procedure/"></NewProcedure>
-       <List path ="/" />
-       <New path="/experiment/" /> 
-       <Detail path ="/experiment/:id"/>  
-       <Update path ="/experiment/:id/edit"/> 
-       <ProcedureEdit path = "/procedure/:id/edit"></ProcedureEdit>
-     </Router>
+      <Header />
+      <Router>
+        
+        {/* <List path ="/home" /> */}
+        <MainPage default path = "/experiments" />
+        <AllExperiments path = "/experiments/allExperiments" />
+        <CreateExperiment path = "/experiments/new" /> 
+        <ExperimentDetail path = "/experiments/:id"/>  
+        <EditExperiment path = "/experiments/:id/edit" />
+        <DeleteExperiment path = "/experiments/:id/delete" />
+        <RegisterUser path = "/register" />
+        <Login path="/login" setUser = {setUser}/> 
+
+      </Router>
     </div>
     
   );

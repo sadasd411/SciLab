@@ -7,33 +7,68 @@ const ExperimentSchema = new mongoose.Schema(
         experimentName:{
             type: String,
             required:[true, "You must enter a name for experiment"],
-             },
-      
-
-        experimentDescription:{
-                type: String,
-             },
-
-        stepName:{ 
-            type: String
+            },
+        
+        startDate: {
+            type: String,
+            required: [true, "You must enter the start date"],
         },
-        stepDescription: { 
-            type: String
-         },
-        // tableName: { 
-        //     type: String
-        //  },
-        // table: {
-        //     type: table, 
-        //     default: 0
-        // }
 
-       },
-     {
-        timestamps:true,
-    }
+        experimentNumber: {
+            type: String,
+            required: [true, "You must enter an experiment number"],
+        },
+
+        objective: {
+            type: String,
+            required: [true, "You must enter an objective"],
+        },
+
+        responsibleUser: {
+            type: String,
+            required: [true, "You must enter the responsible person"]
+        },
+
+        instrumentsRequired: {
+            type: String,
+            required: [true, "You must select atleast 1 instrument"],
+
+            enum: [
+                "Ammeter",
+                "Digital Scale",
+                "Multimeter",
+                "Oscilloscope",
+                "Vernier Caliper",
+                "Voltmeter",
+            ]
+        },
+          
+        status: {
+            type: String,
+            required: [true, "You must select a status"],
+            enum: [
+                "New Request",
+                "In Queue",
+                "In Process",
+                "Completed"
+            ]
+        },
+
+        procedure: {
+            type: String,
+            required: [true, "You must select a procedure"],
+            enum: [
+                "Proc A",
+                "Proc B",
+                "Proc C"
+            ]
+        },
+
+        results: {
+            type: String,
+        },
+    },{timestamps:true}
 );
-const modelName = "Experiment";
-//ExperimentSchema.plugin(uniqueValidator);
-const  Experiment = mongoose.model(modelName,ExperimentSchema);
-module.exports= Experiment;
+
+module.exports = mongoose.model("Experiment", ExperimentSchema);
+
