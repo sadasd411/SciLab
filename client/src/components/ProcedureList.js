@@ -34,6 +34,9 @@ const ListAllProcedure = (props) => {
                 } */}
             </div>
             <div  className = "centerPage">
+            <p>
+                    <Link className="create-new" to = "/procedures/new" >New Procedure</Link>
+                </p>
                 <table>
                     <thead>
                     <th>Procedure Name </th>

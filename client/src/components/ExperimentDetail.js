@@ -21,12 +21,10 @@ const ExperimentDetail = (props) => {
                 <Navigator />
             </div>
             <div className = "centerPage">
-            <p>
-                    <Link className="create-new" to = "/experiments/new" >New Experiment</Link>
-                    <Link className="create-new" to = "/experiments/new" >New Procedure</Link>
-                    <Link className="create-new" to = "/experiments/new" >New Report</Link>
-                </p>
-                <h3>Experiment Details</h3>
+                {/* <p>
+                    <Link className="create-new" to = "/experiments/allExperiments" >back to Home</Link>
+                </p> */}
+                <h5 style={{color: "orange"}}>Experiment Details</h5>
                 <table>
                     <tr className="trDetails">
                         <td className="tdDetails">Experiment #:</td>

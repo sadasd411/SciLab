@@ -2,6 +2,7 @@
 import React,{useEffect, useState} from 'react';
 import{Link, navigate} from '@reach/router';
 import axios from 'axios';
+import Navigator from './Navigator';
 
 const EditExperiment = (props) => {
         const {id} = props;
@@ -92,16 +93,16 @@ const EditExperiment = (props) => {
         }
         return (
             <div>
-                <div  className ="divInline">
-                    <p className="linkToRight"><Link to ={"/"}>back to home</Link></p>
+                <div className = "leftNav">
+                <Navigator />
+                {/* {
+                    curUserEmail === "admin@scilab.com"
+                    ? <NavigatorAdmin />
+                    : <Navigator />
+                } */}
                 </div>
-                <div>
-                <p>
-                    <Link className="create-new" to = "/experiments/new" >New Experiment</Link>
-                    <Link className="create-new" to = "/experiments/new" >New Procedure</Link>
-                    <Link className="create-new" to = "/experiments/new" >New Report</Link>
-                </p>
-                    <h3 style={{color: "orange"}}>Edit Experiment</h3>
+                <div className = "centerPage" >
+                    <h5 style={{color: "orange"}}>Edit Experiment</h5>
                     <form className="divBorder" onSubmit={(e) => onSubmitHandler(e)}>
                         <div>
                             <label className = "experiment-lbl" >Experiment Name:</label>
@@ -243,7 +244,7 @@ const EditExperiment = (props) => {
                                 checked = {procedure}
                                 onChange= {(e) => setProcedure(e.target.value)}
                             >
-                                <option value = ""></option>
+                                <option value = {procedure}></option>
                                 {
                                     allProcedures.map((procedureType, index) => (
                                         <option value = {procedureType} key={index}>{procedureType}</option>
@@ -262,7 +263,7 @@ const EditExperiment = (props) => {
                         </div>
 
                         <div align="left">
-                            <button type ="submit">Update Experiment</button>
+                            <button className = "updateBtn" type ="submit">Update Experiment</button>
                         </div>
                     </form>
                 </div>

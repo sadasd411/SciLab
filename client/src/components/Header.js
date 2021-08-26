@@ -28,7 +28,7 @@ const Header = (props) => {
             <div className="headerNav">
                     {/* <p>Welcome, {user.userLoggedIn}</p> */}
                     <p>
-                        <Link className="headerLinks" to="/experiments">Home</Link>
+                        <Link className="headerLinks" to="/experiments/allExperiments">Home</Link>
                         <Link className="headerLinks" to="/register">Create Account</Link> 
                         <Link className="headerLinks" to="/login">Login</Link> 
                         <Link className="headerLinks" to="/logout" onClick={(e)=> logout(e)}>Logout</Link> 

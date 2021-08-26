@@ -45,7 +45,7 @@ const NewProcedure = (props) => {
             e.preventDefault();
             axios.post('http://localhost:8000/api/procedure/', {
                 procedureName,
-                html: e.target.getContent(),
+                state
             })
             .then(res=>{
                 if(res.data.errors){
