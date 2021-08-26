@@ -32,6 +32,7 @@ const ExperimentSchema = new mongoose.Schema(
         instrumentsRequired: {
             type: String,
             required: [true, "You must select atleast 1 instrument"],
+
             enum: [
                 "Ammeter",
                 "Digital Scale",
@@ -41,7 +42,7 @@ const ExperimentSchema = new mongoose.Schema(
                 "Voltmeter",
             ]
         },
-
+          
         status: {
             type: String,
             required: [true, "You must select a status"],
@@ -70,3 +71,4 @@ const ExperimentSchema = new mongoose.Schema(
 );
 
 module.exports = mongoose.model("Experiment", ExperimentSchema);
+

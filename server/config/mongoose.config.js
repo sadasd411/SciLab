@@ -3,6 +3,7 @@ const mongoose = require('mongoose');
 const dbName = process.env.DB_NAME;
 console.log("dbname: ", dbName);
 
+
 // mongoose.connect("mongodb://localhost/scilab", {
 mongoose.connect("mongodb://localhost/" + dbName, {         // somehow this line should work, but is giving error. So the dbname was hardcoded in the previous line and that works.
     useNewUrlParser: true,
