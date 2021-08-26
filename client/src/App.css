@@ -35,19 +35,19 @@ h1{
 }
 table {
   border-collapse: collapse;
-  margin: 20px 10px;
-  width:600;
-  justify-content:space-between;
+  /* margin: 20px 10px; */
+  /* width:600;
+  justify-content:space-between; */
 }
 
 th {
-  padding: 12px 0px;
+  padding: 5px 0px;
   color: black;
   background-color: #8d8d92;
 }
 td, th {
   border: 1px solid black;
-  padding: 10px;
+  padding: 5px;
 }
 
 
@@ -61,7 +61,7 @@ tr:hover {
 
 input, select {
   width: 100%;
-  padding: 12px 20px; 
+  /* padding: 12px 20px;  */
   /* margin: 10px 0px; */
   display: inline-block;
   border: 1px solid #ccc;
@@ -73,7 +73,7 @@ input, select {
   display: flex-block;
   flex-direction: row;
   justify-content:space-around;
-  padding: 10px;
+  padding: 5px;
  
   /* width:50%;
   float:left; */
@@ -103,8 +103,9 @@ fieldset { float: left; width: 200px; border: 0; padding: 0; margin: 0;}
 }
 
 button {
-  margin: 0px 10px;
-  padding: 5px 10px;
+font-size: 10px;
+  margin: 5px;
+  padding: 5px;
   border: none;
   border-radius: 4px;
   cursor: pointer;
@@ -524,6 +525,22 @@ li.ProseMirror-selectednode:after {
 	font-size: 10px;
 	color: red;
 }
+.header {
+	margin-bottom: 5px;
+	border-bottom: 1px solid darkgray;
+}
+
+.headerBanner {
+	display: inline-block;
+	width: 400px;
+}
+.headerNav {
+	display: inline-block;
+	text-align: right;
+	/* margin: 5px;
+	padding: 5px; */
+	border-bottom: 1px solid darkgray;
+}
 
 .headerLinks {
 	font-size: smaller;
@@ -537,6 +554,9 @@ li.ProseMirror-selectednode:after {
 	margin: 5px;
 	font-size: 15px;
 }
+.leftNavLinks:link {
+	color: black;
+}
 .leftNavLinks:active {
 	color: orange;
 }
@@ -546,9 +566,7 @@ li.ProseMirror-selectednode:after {
 .leftNavLinks:hover {
 	color:orange;
 }
-.leftNavLinks:link {
-	color: black;
-}
+
 .tableLinks {
 	color: blue;
 }
@@ -571,6 +589,7 @@ li.ProseMirror-selectednode:after {
 	width: 550px;
 	height: 300px;
 	overflow-y: auto;
+	margin-top: 5px;
 }
 .defaultPic {
 	width: 200px;
@@ -579,11 +598,12 @@ li.ProseMirror-selectednode:after {
 
 table {
 	border-collapse: collapse;
-	margin: 20px 10px;
+	/* margin: 20px 10px; */
+
 }
 
 th {
-	padding: 12px 0px;
+	/* padding: 12px 0px; */
 	color: white;
 }
 
@@ -605,7 +625,7 @@ tr:hover {
 p {
 	font-size: 10px;
 	color: black;
-	padding: 5px;
+	/* padding: 5px; */
 }
 
 button {
