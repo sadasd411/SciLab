@@ -4,34 +4,35 @@ const mongoose = require('mongoose');
 const ExperimentSchema = new mongoose.Schema(
     
     {
-        experimentName: {
+        experimentName:{
             type: String,
-            required:[true, "An experiment name is required"],
-        },
-
+            required:[true, "You must enter a name for experiment"],
+            },
+        
         startDate: {
-            type: Date,
-            required:[true, "A start date is required"],
+            type: String,
+            required: [true, "You must enter the start date"],
         },
 
-        experimentNumber: { 
+        experimentNumber: {
             type: String,
-            required:[true, "An experiment number is required"],
+            required: [true, "You must enter an experiment number"],
         },
 
-        objective: { 
+        objective: {
             type: String,
-            required:[true, "An objective is required"],
+            required: [true, "You must enter an objective"],
         },
 
-        responsibleUser: { 
+        responsibleUser: {
             type: String,
-            required:[true, "An introduction is required"],
+            required: [true, "You must enter the responsible person"]
         },
 
-        instrumentsRequired: { 
+        instrumentsRequired: {
             type: String,
-            required:[true, "A required instrument is required"],
+            required: [true, "You must select atleast 1 instrument"],
+
             enum: [
                 "Ammeter",
                 "Digital Scale",
@@ -41,72 +42,33 @@ const ExperimentSchema = new mongoose.Schema(
                 "Voltmeter",
             ]
         },
-
-        status: { 
+          
+        status: {
             type: String,
-            required:[true, "A status is required"],
+            required: [true, "You must select a status"],
             enum: [
                 "New Request",
                 "In Queue",
                 "In Process",
-                "Completed",
+                "Completed"
             ]
         },
 
-        procedure: { 
+        procedure: {
             type: String,
-            required:[true, "A status is required"],
+            required: [true, "You must select a procedure"],
             enum: [
                 "Proc A",
                 "Proc B",
-                "Proc C",
+                "Proc C"
             ]
         },
 
         results: {
             type: String,
-            required:[true, "A result is required"],
         },
+    },{timestamps:true}
+);
 
-        firstName: {
-            type: String,
-            required:[true, "A first name is required"],
-        },
+module.exports = mongoose.model("Experiment", ExperimentSchema);
 
-        lastName: {
-            type: String,
-            required:[true, "A last name is required"],
-        },
-
-        selectExperiment: {
-            type: String,
-            required:[true, "A select experiment is required"],
-            enum: [
-                "Experiment #1",
-                "Experiment #2",
-                "Experiment #3",
-                "Experiment #4",
-                "Experiment #5",
-                "Experiment #6",
-                "Experiment #7",
-                "Experiment #8",
-                "Experiment #9",
-            ]
-        },
-
-        type: {
-            type: String,
-            required:[true, "A type is required"],
-            enum: [
-                "PDF",
-                "DOC",
-                "HTML",
-            ]
-        },
-
-    }, { timestamps: true });
-
-const modelName = "Experiment";
-//ExperimentSchema.plugin(uniqueValidator);
-const  Experiment = mongoose.model(modelName, ExperimentSchema);
-module.exports= Experiment;

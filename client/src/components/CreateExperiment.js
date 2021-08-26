@@ -1,11 +1,12 @@
-import React,{useEffect,useState} from 'react';
-import{Link,navigate,Navigate} from '@reach/router';
-import axios from 'axios'
 
-const NewExperiment = (props) => {
+import React,{useEffect, useState} from 'react';
+import{Link, navigate} from '@reach/router';
+import axios from 'axios';
+
+const CreateExperiment = (props) => {
 
         const [ curUserName, setCurUserName ] = useState(localStorage.getItem('curUserName'));
-        const [ curUserEmail, setCurUserEmail ] = useState(localStorage.getItem('curUserEmail'))
+        const [ curUserEmail, setCurUserEmail ] = useState(localStorage.getItem('curUserEmail'));
 
         const [experimentName, setExperimentName] = useState("");
         const [startDate, setStartDate] = useState("");
@@ -17,9 +18,8 @@ const NewExperiment = (props) => {
         const [procedure, setProcedure] = useState("");
         const [results, setResults] = useState("");
         
-
-        const [errors, setErrors] = useState("");
-        console.log(props);
+        const [errors, setErrors] = useState({});
+        console.log("props: ", props);
 
         const allInstruments = [
             "Ammeter",
@@ -57,10 +57,10 @@ const NewExperiment = (props) => {
                 results
             }
 
-            axios.post('http://localhost:8000/api/experiments/', newExperiment)
+            axios.post('http://localhost:8000/api/experiments/new', newExperiment)
                 .then((res) => {
                     console.log("res: ", res);
-                    navigate("/experiments/" + res.data._id);
+                    navigate("/experiments/allExperiments");
                 })
                 .catch((err) => {
                     console.log("err: ", err.response);
@@ -167,7 +167,7 @@ const NewExperiment = (props) => {
                             <select className = "experiment-input"  
                                 name = "instrumentsRequired"
                                 checked = {instrumentsRequired}                       // changed 'value' to 'checked'
-                                onChange= {(e) => setObjective(e.target.value)}
+                                onChange= {(e) => setInstrumentsRequired(e.target.value)}
                             >
                                 <option value = "" ></option>
                                 {
@@ -243,4 +243,4 @@ const NewExperiment = (props) => {
             </div>
         )
 }
-export default NewExperiment;
+export default CreateExperiment;
