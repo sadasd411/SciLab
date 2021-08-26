@@ -47,7 +47,7 @@ const AllExperiments = (props) => {
                 </p>
                 {/* <h4>All Experiments</h4> */}
                 <table>
-                <thead>
+                    <thead>
                         <th>Exp #</th>
                         <th>Exp Name</th>
                         <th>Resp. Person</th>

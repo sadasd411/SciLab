@@ -21,23 +21,18 @@ const Header = (props) => {
       navigate("/experiments"); 
     };
   return (
-      <div>
-          <div>
+      <div className="header">
+          <div className= "headerBanner">
             <h1><span style={{color: "orange"}}>Sci</span>Lab</h1>
-            <p>Welcome {curUserName ? curUserName : null}</p>
-            <div className="headerNav">
-                    {/* <p>Welcome, {user.userLoggedIn}</p> */}
-                    <p>
-                        <Link className="headerLinks" to="/experiments/allExperiments">Home</Link>
-                        <Link className="headerLinks" to="/register">Create Account</Link> 
-                        <Link className="headerLinks" to="/login">Login</Link> 
-                        <Link className="headerLinks" to="/logout" onClick={(e)=> logout(e)}>Logout</Link> 
-                        {/* <p style={{color: "yellow"}}>Hello</p>
-                        <p>curUserName: {localStorage.getItem('curUserName')}</p> */}
-                    </p>
-                </div>  
           </div>
-          <hr></hr>
+          <div className="headerNav">
+            <p>
+              <Link className="headerLinks" to="/experiments/allExperiments">Home</Link> 
+              <Link className="headerLinks" to="/register">Create Account</Link> 
+              <Link className="headerLinks" to="/login">Login</Link> 
+              <Link className="headerLinks" to="/logout" onClick={(e)=> logout(e)}>Logout</Link> 
+            </p>
+          </div>       
       </div>  
   );
 }
