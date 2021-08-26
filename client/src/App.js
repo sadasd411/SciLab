@@ -13,7 +13,8 @@ import CreateExperiment from './components/CreateExperiment';
 import EditExperiment from './components/EditExperiment';
 import AllExperiments from './components/AllExperiments';
 import DeleteExperiment from './components/DeleteExperiment';
-
+import AllReports from './components/AllReports';
+import CreateReport from './components/CreateReport';
 
 
 function App() {
@@ -37,6 +38,8 @@ function App() {
         <DeleteExperiment path = "/experiments/:id/delete" />
         <RegisterUser path = "/register" />
         <Login path="/login" setUser = {setUser}/> 
+        <AllReports path = "/reports/allReports" />
+        <CreateReport path = "/reports/new" />
 
       </Router>
     </div>
