@@ -5,6 +5,8 @@ import {Link, navigate} from '@reach/router';
 
 
 const Header = (props) => {
+  const {user} = props;
+  console.log("user: ", user);
 
   const [ curUserName, setCurUserName ] = useState(localStorage.getItem('curUserName'));
   const [ curUserEmail, setCurUserEmail ] = useState(localStorage.getItem('curUserEmail'))

@@ -1,14 +1,19 @@
 
 import './App.css';
+import { Router } from '@reach/router';
+import {useState} from 'react';
+import MainPage from './components/MainPage';
 import Login from './components/Login';
 import RegisterUser from './components/RegisterUser';
 import Header from './components/Header';
 import List from './components/List';
 import Update from './components/Update';
-import Detail from './components/Details';
-import NewExperiment from './components/NewExperiment';
-import { Router } from '@reach/router';
-import {useState} from 'react';
+import ExperimentDetail from './components/ExperimentDetail';
+import CreateExperiment from './components/CreateExperiment';
+import EditExperiment from './components/EditExperiment';
+import AllExperiments from './components/AllExperiments';
+import DeleteExperiment from './components/DeleteExperiment';
+
 
 
 function App() {
@@ -20,18 +25,19 @@ function App() {
 
   return (
     <div className="App">
-      {/* <Header></Header>
-      <List></List> */}
-      <Header></Header>
+      <Header />
       <Router>
         
-        <List path ="/home" />
-        {/* allExperiments path = "/experiments" */}
-        <NewExperiment path = "/experiments/new" /> 
-        <Detail path ="/experiments/:id"/>  
-        <Update path ="/experiments/:id/edit"/> 
+        {/* <List path ="/home" /> */}
+        <MainPage default path = "/experiments" />
+        <AllExperiments path = "/experiments/allExperiments" />
+        <CreateExperiment path = "/experiments/new" /> 
+        <ExperimentDetail path = "/experiments/:id"/>  
+        <EditExperiment path = "/experiments/:id/edit" />
+        <DeleteExperiment path = "/experiments/:id/delete" />
         <RegisterUser path = "/register" />
         <Login path="/login" setUser = {setUser}/> 
+
       </Router>
     </div>
     

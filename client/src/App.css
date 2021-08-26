@@ -1,7 +1,7 @@
 /* replaced the original .App class to remove centering from everything */
 
 .App {
-  max-width: 600px;
+  max-width: 700px;
   margin: auto;
   border-radius: 5px;
   background-color: #f2f2f2;
@@ -109,7 +109,7 @@ button {
   border-radius: 4px;
   cursor: pointer;
   color: white;
-  background-color: rgb(70, 70, 71);
+  /* background-color: rgb(70, 70, 71); */
 }
 
 button:disabled,button[disabled]{
@@ -123,7 +123,6 @@ button:disabled,button[disabled]{
 
 .deleteBtn {
   color: black;
-  background-color: red;
 }
 
 /* to help troubleshoot, I created this class so I can easily add and remove it */
@@ -531,4 +530,86 @@ li.ProseMirror-selectednode:after {
 	color: orange;
 	margin: 5px;
 	padding: 5px;
+}
+.leftNavLinks {
+	color: black;
+	text-decoration: none;
+	margin: 5px;
+	font-size: 15px;
+}
+.leftNavLinks:active {
+	color: purple;
+}
+.leftNavLinks:visited {
+	color:purple;
+}
+.leftNavLinks:link {
+	color: black;
+}
+
+.mainFrame {
+	width: "500px";
+}
+
+.leftNav {
+	display: inline-block; 
+	vertical-align: top;
+	width: 100px; 
+	height: 300px;
+	border-right: 1px solid black;
+	overflow-y: auto;
+}
+.centerPage {
+	display: inline-block; 
+	vertical-align: top;
+	width: 500px;
+	height: 300px;
+	overflow-y: auto;
+}
+.defaultPic {
+	width: 200px;
+	height: 200px;
+}
+
+table {
+	border-collapse: collapse;
+	margin: 20px 10px;
+}
+
+th {
+	padding: 12px 0px;
+	color: white;
+}
+
+td, th {
+	font-size: small;
+	border: 1px solid darkgray;
+	padding: 5px;
+}
+
+.displayAll tr:nth-child(even) {
+	background-color: #cfcfcf;
+}
+
+tr:hover {
+	/* background-color: #8a8a8a; */
+	background-color: lightslategray;
+}
+p {
+	font-size: 10px;
+	color: black;
+	padding: 5px;
+}
+
+button {
+	font-size: 8px;
+	border-radius: 5px;
+	background-color: none;
+	color: black;
+}
+.create-new {
+	border: 1px solid black;
+	margin: 5px;
+	padding: 5px;
+	border-radius: 5px;
 }
