@@ -19,7 +19,7 @@ h1{
 }
 .divBorder {
   border: double black;
-  padding:10;
+  padding:5px;
 }
 
 .divInline{
@@ -508,7 +508,7 @@ li.ProseMirror-selectednode:after {
 }
 
 .experiment-lbl {
-	font-size: 12px;
+	font-size: 10px;
 	margin: 5px;
 
 }
@@ -516,7 +516,7 @@ li.ProseMirror-selectednode:after {
 .experiment-input {
 	width: 400px;
 	margin: 5px;
-	font-size: 12px;
+	font-size: 10px;
 	padding: 5px;
 }
 
@@ -538,13 +538,19 @@ li.ProseMirror-selectednode:after {
 	font-size: 15px;
 }
 .leftNavLinks:active {
-	color: purple;
+	color: orange;
 }
 .leftNavLinks:visited {
-	color:purple;
+	color:black;
+}
+.leftNavLinks:hover {
+	color:orange;
 }
 .leftNavLinks:link {
 	color: black;
+}
+.tableLinks {
+	color: blue;
 }
 
 .mainFrame {
@@ -562,7 +568,7 @@ li.ProseMirror-selectednode:after {
 .centerPage {
 	display: inline-block; 
 	vertical-align: top;
-	width: 500px;
+	width: 550px;
 	height: 300px;
 	overflow-y: auto;
 }
@@ -593,8 +599,9 @@ td, th {
 
 tr:hover {
 	/* background-color: #8a8a8a; */
-	background-color: lightslategray;
+	background-color: lightgray;
 }
+
 p {
 	font-size: 10px;
 	color: black;
@@ -612,4 +619,14 @@ button {
 	margin: 5px;
 	padding: 5px;
 	border-radius: 5px;
+
+}
+.text-area {
+	font-size: 10px;
+
+}
+.updateBtn {
+	background: lightgray;
+	font: 10px;
+	border-radius: 5px;;
 }
