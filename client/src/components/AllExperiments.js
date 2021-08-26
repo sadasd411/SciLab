@@ -42,7 +42,7 @@ const AllExperiments = (props) => {
             <div  className = "centerPage">
                 <p>
                     <Link className="create-new" to = "/experiments/new" >New Experiment</Link>
-                    <Link className="create-new" to = "/experiments/new" >New Procedure</Link>
+                    <Link className="create-new" to = "/procedures/new" >New Procedure</Link>
                     <Link className="create-new" to = "/experiments/new" >New Report</Link>
                 </p>
                 <h3>All Experiments</h3>

@@ -11,6 +11,10 @@ import CreateExperiment from './components/CreateExperiment';
 import EditExperiment from './components/EditExperiment';
 import AllExperiments from './components/AllExperiments';
 import DeleteExperiment from './components/DeleteExperiment';
+import Dashboard from './components/Dashboard';
+import AllProcedures from './components/ProcedureList';
+import EditProcedure from './components/ProcedureEdit';
+import CreateProcedure from './components/ProcedureNew';
 
 
 
@@ -28,6 +32,10 @@ function App() {
         
         {/* <List path ="/home" /> */}
         <MainPage default path = "/experiments" />
+        <Dashboard path ="/dashboard"></Dashboard>
+        <AllProcedures path ="/procedures/allProcedures"/>
+        <EditProcedure path ="/procedures/:id/edit"/>
+        <CreateProcedure path = "/procedures/new" /> 
         <AllExperiments path = "/experiments/allExperiments" />
         <CreateExperiment path = "/experiments/new" /> 
         <ExperimentDetail path = "/experiments/:id"/>  

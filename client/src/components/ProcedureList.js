@@ -1,7 +1,7 @@
 import React,{useEffect,useState} from 'react'
 import{Link,navigate, Router} from '@reach/router';
 import axios from 'axios'
-
+import Navigator from './Navigator'
 
 const ListAllProcedure = (props) => {
     const [allProcedures, setAllProcedures] = useState([]);
@@ -25,6 +25,15 @@ const ListAllProcedure = (props) => {
         <div>
             <div>
                 {/* <button className="linkToRight"><Link to ={"/experiment"}>Add Experiment</Link></button> */}
+                <div className = "leftNav">
+                <Navigator />
+                {/* {
+                    curUserEmail === "admin@scilab.com"
+                    ? <NavigatorAdmin />
+                    : <Navigator />
+                } */}
+            </div>
+            <div  className = "centerPage">
                 <table>
                     <thead>
                     <th>Procedure Name </th>
@@ -40,7 +49,7 @@ const ListAllProcedure = (props) => {
                             <td>
                             <Link to ={`/procedure/${procedure._id}`}>details </Link>
                             <span>|</span>
-                            <Link to ={`/procedure/${procedure._id}/edit`}> edit</Link>
+                            <Link to ={`/procedures/${procedure._id}/edit`}> edit</Link>
                             <span>|</span>
                             <Link to ={`/procedure/`}> add</Link>
                             </td>
@@ -49,6 +58,7 @@ const ListAllProcedure = (props) => {
                             
                     </tbody>
                   </table>
+                  </div>
             </div>
         </div>)
 }
