@@ -18,8 +18,9 @@ h1{
   text-align: right;
 }
 .divBorder {
-  border: double black;
-  padding:5px;
+	width: 550px;
+	border: double black;
+	padding:5px;
 }
 
 .divInline{
@@ -503,9 +504,11 @@ li.ProseMirror-selectednode:after {
 
 .experiment-textarea {
 	/* height: 100px; */
+	font-size: 10px;
 	rows: "3";
 	columns: "60";
 	wrap: "soft";
+	width: 400px;;
 }
 
 .experiment-lbl {
@@ -590,6 +593,7 @@ li.ProseMirror-selectednode:after {
 	height: 350px;
 	overflow-y: auto;
 	margin-top: 5px;
+	margin-left: 10px;
 }
 .defaultPic {
 	width: 200px;
@@ -639,10 +643,6 @@ button {
 	margin: 5px;
 	padding: 5px;
 	border-radius: 5px;
-
-}
-.experiment-textarea {
-	font-size: 10px;
 
 }
 .updateBtn {

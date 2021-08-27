@@ -13,6 +13,7 @@ import CreateExperiment from './components/CreateExperiment';
 import EditExperiment from './components/EditExperiment';
 import AllExperiments from './components/AllExperiments';
 import DeleteExperiment from './components/DeleteExperiment';
+import FileUpload from './components/FileUpload';
 
 
 

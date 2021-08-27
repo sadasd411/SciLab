@@ -2,6 +2,8 @@
 import React,{useEffect, useState} from 'react';
 import{Link, navigate} from '@reach/router';
 import axios from 'axios';
+import FileUpload from './FileUpload';
+import Navigator from './Navigator';
 
 const CreateExperiment = (props) => {
 
@@ -71,11 +73,11 @@ const CreateExperiment = (props) => {
         }
         return (
             <div>
-                <div  className ="divInline">
-                    <p className="linkToRight"><Link to ={"/"}>back to home</Link></p>
+                <div className = "leftNav">
+                    <Navigator />
                 </div>
-                <div>
-                    <h3 style={{color: "orange"}}>Create a new Experiment</h3>
+                <div className = "centerPage" >
+                    <h4 style={{color: "orange"}}>Create a new Experiment</h4>
                     <form className="divBorder" onSubmit={(e) => onSubmitHandler(e)}>
                         <div>
                             <label className = "experiment-lbl" >Experiment Name:</label>
@@ -234,9 +236,11 @@ const CreateExperiment = (props) => {
                             <textarea className = "experiment-textarea" rows="2" cols="48" wrap="soft" value={results} onChange = {(e) => setResults(e.target.value)}> 
                             </textarea>
                         </div>
-
                         <div align="left">
                             <button type ="submit">Add Experiment</button>
+                        </div>
+                        <div>
+                            {/* <FileUpload /> */}
                         </div>
                     </form>
                 </div>
