@@ -1,12 +1,14 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import { Link, navigate } from '@reach/router';
+import Navigator from './Navigator';
+
 
 const AllReports = (props) => {
     const [ AllReports, setAllReports ] = useState([]);
 
     useEffect(() => {
-        axios.get("http://localhost:8000/api/AllReports/")
+        axios.get("http://localhost:8000/api/reports/allReports/")
             .then((res) => {
                 console.log(res);
                 setAllReports(res.data);
@@ -18,10 +20,21 @@ const AllReports = (props) => {
 
     return (
         <div>
-            <button type ="submit">Create Report</button>
-            <div>
-                <h1>Experiment Report</h1>
-                <table className="allReports">
+            <div className="leftNav">
+                <Navigator />
+                {/* {
+                    curUserEmail === "admin@scilab.com"
+                    ? <NavigatorAdmin />
+                    : <Navigator />
+                } */}
+            </div>
+            <div className="centerPage">
+                <p className="firstBoxAll">
+                    <Link to = "/reports/new">New Report</Link>
+                </p>
+                <h5 style={{color: "orange"}}>All Reports</h5>
+                <br/>
+                <table className="tableAll">
                     <tbody>
                         <tr>
                             <td>First Name

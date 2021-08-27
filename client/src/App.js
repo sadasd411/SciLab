@@ -17,6 +17,8 @@ import EditProcedure from './components/ProcedureEdit';
 import CreateProcedure from './components/ProcedureNew';
 import ProcedureDetail from './components/ProcedureDetail';
 
+import AllReports from './components/AllReports';
+import CreateReport from './components/CreateReport';
 
 
 function App() {
@@ -45,6 +47,8 @@ function App() {
         <DeleteExperiment path = "/experiments/:id/delete" />
         <RegisterUser path = "/register" />
         <Login path="/login" setUser = {setUser}/> 
+        <AllReports path = "/reports/allReports" />
+        <CreateReport path = "/reports/new" />
 
       </Router>
     </div>

@@ -665,3 +665,36 @@ button {
 .linkParagraph {
 	margin-top: 5px;;
 }
+
+.firstBoxAll {
+	padding: 10px;
+	text-align: right;
+}
+
+.tableAll {
+	margin-left: 150px;
+}
+
+.firstBoxCreate {
+	padding: 10px;
+}
+
+.middleBoxCreate {
+	border: 1px solid black;
+	padding: 10px;
+}
+
+.buttonCreate {
+	border: 1px solid black;
+	border-radius: 5px;
+	width: 180px;
+	text-align: center;
+	font-size: 15px;
+	margin-left: 230px;
+	margin-top: 10px;
+	margin-bottom: 10px;
+}
+
+.inputCreate {
+	margin-bottom: 15px;
+}
