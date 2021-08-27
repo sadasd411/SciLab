@@ -4,6 +4,7 @@ import axios from "axios";
 import { Editor } from "@tinymce/tinymce-react";
 import path from "path";
 import { nanoid } from "nanoid";
+import Navigator from './Navigator';
 
 const Update = (props) => {
   const [procedureName, setProcedureName] = useState("");
@@ -41,13 +42,13 @@ const Update = (props) => {
       setState(() => res.data.html);
     });
   }, []);
-  
+
   const onSubmitHandler = (e) => {
     e.preventDefault();
     axios
       .put("http://localhost:8000/api/procedure/" + props.id, {
         procedureName,
-        state,
+        html: state,
       })
       .then((res) => {
         console.log(res.data.errors);
@@ -63,8 +64,16 @@ const Update = (props) => {
   };
   return (
     <div>
-     
-      <form className="divBorder" onSubmit={onSubmitHandler}>
+      <div className = "leftNav">
+                <Navigator />
+                {/* {
+                    curUserEmail === "admin@scilab.com"
+                    ? <NavigatorAdmin />
+                    : <Navigator />
+                } */}
+                </div>
+     <div className = "centerPage" >
+      <form  onSubmit={onSubmitHandler}>
         <button type="submit" value="refresh" ref={updateRef} onClick={fetch} />
         <div className="row">
           <div className="column left">
@@ -82,11 +91,7 @@ const Update = (props) => {
             {procedureName.length < 3 && procedureName.length > 0 ? (
               <span className="error-text">Procedure Name &gt; 3 </span>
             ) : null}
-            {
-              state === "" ? 
-                <p>Loading</p>
-                : (
-                  <Editor
+           <Editor
               id="myTiny_Mce"
               initialValue="<p>Initial content</p>"
               apiKey="au50u78j9vjabzcr4icg4v3oknubu08ifv9rfstawlzmdobp"
@@ -193,17 +198,15 @@ const Update = (props) => {
               onEditorChange={handleChange}
               onSaveContent={handleSave}
             />
-                )
-            }
-
-            
           </div>
+          
         </div>
       
         <div align="center">
           <button type="submit">Edit Procedure</button>
         </div>
       </form>
+      </div>
     </div>
   );
 };

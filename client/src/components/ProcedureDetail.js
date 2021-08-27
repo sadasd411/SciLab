@@ -51,7 +51,7 @@ const Detail = (props) => {
                 initialValue="<p>Initial content</p>"
                 apiKey="au50u78j9vjabzcr4icg4v3oknubu08ifv9rfstawlzmdobp"
                 init={{
-                    height: "50vh",
+                    height: "25vh",
                     menubar: true,
                     selector: "textarea",
                     external_plugins: {

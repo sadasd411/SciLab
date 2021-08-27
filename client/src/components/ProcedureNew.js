@@ -4,6 +4,7 @@ import axios from "axios";
 import { Editor } from "@tinymce/tinymce-react";
 import path from "path";
 import { nanoid } from "nanoid";
+import Navigator from './Navigator';
 
 const NewProcedure = (props) => {
   const [procedureName, setProcedureName] = useState("");
@@ -39,13 +40,17 @@ const NewProcedure = (props) => {
 
   return (
     <div>
-      <div className="divInline">
-        <p className="linkToRight">
-          <Link to={"/"}>back to home</Link>
-        </p>
-      </div>
+    <div className = "leftNav">
+              <Navigator />
+              {/* {
+                  curUserEmail === "admin@scilab.com"
+                  ? <NavigatorAdmin />
+                  : <Navigator />
+              } */}
+              </div>
+   <div className = "centerPage" >
 
-      <form className="divBorder" onSubmit={handleSave}>
+      <form className="top" onSubmit={handleSave}>
         <div className="row">
           <div className="column left">
             <br />
@@ -66,7 +71,7 @@ const NewProcedure = (props) => {
               initialValue="<p>Initial content</p>"
               apiKey="au50u78j9vjabzcr4icg4v3oknubu08ifv9rfstawlzmdobp"
               init={{
-                height: "90vh",
+                height: "50vh",
                 menubar: true,
                 selector: "textarea",
                 external_plugins: {
@@ -170,6 +175,7 @@ const NewProcedure = (props) => {
           </button>
         </div>
       </form>
+      </div>
     </div>
   );
 };
