@@ -43,7 +43,7 @@ const AllExperiments = (props) => {
             <div  className = "centerPage">
                 <p className = "linkParagraph">
                     <Link className="create-new" to = "/experiments/new" >New Experiment</Link>
-                    <Link className="create-new" to = "/experiments/new" >New Procedure</Link>
+                    <Link className="create-new" to = "/procedures/new" >New Procedure</Link>
                     <Link className="create-new" to = "/experiments/new" >New Report</Link>
                 </p>
                 {/* <h4>All Experiments</h4> */}

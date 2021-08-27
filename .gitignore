@@ -74,6 +74,9 @@ build/Release
 
 # Dependency directories
 node_modules/
+<<<<<<< HEAD
+.env
+=======
 jspm_packages/
 
 # Snowpack dependency directory (https://snowpack.dev/)
@@ -166,3 +169,4 @@ thumb
 sketch
 
 # End of https://www.toptal.com/developers/gitignore/api/macos,react,node
+>>>>>>> 493295c6bb6430ac1e1b851fcdd1997b505fb983

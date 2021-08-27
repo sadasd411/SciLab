@@ -1,7 +1,7 @@
 //import React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import{Link,navigate, Router} from '@reach/router';
 import React, {useState, useEffect} from 'react';
-import {Link, navigate} from '@reach/router';
 
 
 const Header = (props) => {

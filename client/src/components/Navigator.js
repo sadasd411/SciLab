@@ -17,7 +17,7 @@ const Navigator = (props) => {
                     Welcome!
                     {/* {curUserName ? "Welcome, " + curUserName + "!" : "Welcome!"}  */}
                 </p>
-                <p><Link className = "leftNavLinks" to="/experiments/dashboard">Dashboard</Link></p>
+                <p><Link className = "leftNavLinks" to="/dashboard">Dashboard</Link></p>                
                 <p><Link className = "leftNavLinks" to="/experiments/allExperiments">Experiments</Link></p>                
                 <p><Link className = "leftNavLinks" to="/procedures/allProcedures">Procedures</Link></p>
                 <p><Link className = "leftNavLinks" to="/reports/allReports">Reports</Link></p>
