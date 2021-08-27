@@ -4,6 +4,7 @@ import axios from 'axios';
 import {Link, navigate} from '@reach/router';
 import Navigator from './Navigator';
 import DeleteExperiment from './DeleteExperiment';
+import FileUpload from './FileUpload';
 
 const AllExperiments = (props) => {
     const [ curUserName, setCurUserName ] = useState(localStorage.getItem('curUserName'));
@@ -62,7 +63,7 @@ const AllExperiments = (props) => {
                                         {experiment.experimentNumber}
                                     </td>
                                     <td>
-                                        {experiment.experimentName}
+                                        <Link to={"/experiments/" + experiment._id} >{experiment.experimentName}</Link>
                                     </td>
                                     <td>
                                         {experiment.responsibleUser}

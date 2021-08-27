@@ -18,7 +18,7 @@ const Header = (props) => {
     const logout = (e) => {
       e.preventDefault();
       localStorage.clear();
-      navigate("/experiments"); 
+      navigate("/experiments/allExperiments"); 
     };
   return (
       <div className="header">

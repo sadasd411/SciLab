@@ -195,10 +195,10 @@ const EditExperiment = (props) => {
                             <br/>
                             <select className = "experiment-input"  
                                 name = "instrumentsRequired"
-                                checked = {instrumentsRequired}                       // changed 'value' to 'checked'
+                                value = {instrumentsRequired}                       // changed 'value' to 'checked'
                                 onChange= {(e) => setInstrumentsRequired(e.target.value)}
                             >
-                                {/* <option value = "" ></option> */}
+                                <option value = "" ></option>
                                 {
                                     allInstruments.map((instrumentType, index) => (
                                         <option value = {instrumentType} key={index}>{instrumentType}</option>
@@ -219,10 +219,10 @@ const EditExperiment = (props) => {
                             <br/>
                             <select className = "experiment-input"  
                                 name = "status"
-                                checked = {status}
+                                value = {status}
                                 onChange= {(e) => setStatus(e.target.value)}
                             >
-                                {/* <option value = ""></option> */}
+                                <option value = ""></option>
                                 {
                                     allStatus.map((statusType, index) => (
                                         <option value = {statusType} key={index}>{statusType}</option>
@@ -243,10 +243,10 @@ const EditExperiment = (props) => {
                             <br/>
                             <select className = "experiment-input"  
                                 name = "procedure"
-                                checked = {procedure}
+                                value = {procedure}
                                 onChange= {(e) => setProcedure(e.target.value)}
                             >
-                                {/* <option value = {procedure}></option> */}
+                                <option value = ""></option>
                                 {
                                     allProcedures.map((procedureType, index) => (
                                         <option value = {procedureType} key={index}>{procedureType}</option>
@@ -263,7 +263,6 @@ const EditExperiment = (props) => {
                             <textarea className = "experiment-textarea" rows="2" cols="48" wrap="soft" value={results} onChange = {(e) => setResults(e.target.value)}> 
                             </textarea>
                         </div>
-
                         <div align="left">
                             <button className = "updateBtn" type ="submit">Update Experiment</button>
                         </div>

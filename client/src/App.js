@@ -11,11 +11,14 @@ import CreateExperiment from './components/CreateExperiment';
 import EditExperiment from './components/EditExperiment';
 import AllExperiments from './components/AllExperiments';
 import DeleteExperiment from './components/DeleteExperiment';
+import FileUpload from './components/FileUpload';
+
 import Dashboard from './components/Dashboard';
 import AllProcedures from './components/ProcedureList';
 import EditProcedure from './components/ProcedureEdit';
 import CreateProcedure from './components/ProcedureNew';
 import ProcedureDetail from './components/ProcedureDetail';
+
 
 import AllReports from './components/AllReports';
 import CreateReport from './components/CreateReport';
@@ -34,8 +37,7 @@ function App() {
       <Router>
         
         {/* <List path ="/home" /> */}
-        <MainPage default path = "/experiments" />
-        <Dashboard path ="/dashboard"></Dashboard>
+        <Dashboard default path ="/dashboard"></Dashboard>
         <AllProcedures path ="/procedures/allProcedures"/>
         <EditProcedure path ="/procedures/:id/edit"/>
         <CreateProcedure path = "/procedures/new" /> 

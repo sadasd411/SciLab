@@ -14,7 +14,8 @@ const Navigator = (props) => {
     return (
             <div className = "leftNav">
                 <p className="welcome-p">
-                    {curUserName ? "Welcome, " + curUserName + "!" : "Welcome!"} 
+                    Welcome!
+                    {/* {curUserName ? "Welcome, " + curUserName + "!" : "Welcome!"}  */}
                 </p>
                 <p><Link className = "leftNavLinks" to="/dashboard">Dashboard</Link></p>                
                 <p><Link className = "leftNavLinks" to="/experiments/allExperiments">Experiments</Link></p>                

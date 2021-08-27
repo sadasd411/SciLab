@@ -42,7 +42,7 @@ const RegisterUser = props => {
         })
        
         .then((res) => {
-            console.log(res.data);
+            console.log("res.data from register: ", res.data);
 
             // when we successfully created the account, reset state for registration form
             //    We do this if we are NOT navigating automatically away from the page
