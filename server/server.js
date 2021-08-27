@@ -32,5 +32,4 @@ require('./routes/user.routes')(app);           // this shud be fine coz using f
 // set up the server for listening
 app.listen(port, () => {
     console.log("The express app server is listening on port: ", port);
-})
-
+});
