@@ -18,6 +18,7 @@ const EditExperiment = (props) => {
         const [instrumentsRequired, setInstrumentsRequired] = useState("");
         const [status, setStatus] = useState("");
         const [procedure, setProcedure] = useState("");
+        const [procedures, setProcedures] = useState("");
         const [results, setResults] = useState("");
         
         const [errors, setErrors] = useState({});
@@ -90,6 +91,7 @@ const EditExperiment = (props) => {
                         setErrors(err.response.data.errors);
                     }
                 });
+                
         }
         return (
             <div>

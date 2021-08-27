@@ -15,6 +15,7 @@ import Dashboard from './components/Dashboard';
 import AllProcedures from './components/ProcedureList';
 import EditProcedure from './components/ProcedureEdit';
 import CreateProcedure from './components/ProcedureNew';
+import ProcedureDetail from './components/ProcedureDetail';
 
 
 
@@ -36,6 +37,7 @@ function App() {
         <AllProcedures path ="/procedures/allProcedures"/>
         <EditProcedure path ="/procedures/:id/edit"/>
         <CreateProcedure path = "/procedures/new" /> 
+        <ProcedureDetail path = "/procedures/:id"/>
         <AllExperiments path = "/experiments/allExperiments" />
         <CreateExperiment path = "/experiments/new" /> 
         <ExperimentDetail path = "/experiments/:id"/>  

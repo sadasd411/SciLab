@@ -25,6 +25,7 @@ require('./config/mongoose.config');
 // add routes to listen --------------------------------------
 const experimentRoutes = require('./routes/experiment.route');    /// check if this is the right name
 experimentRoutes(app);
+require('./routes/procedure.route')(app);
 
 require('./routes/user.routes')(app);           // this shud be fine coz using for login.
 // require('./routes/dashboard.routes')(app);        // dashboard here, check the name for this one.

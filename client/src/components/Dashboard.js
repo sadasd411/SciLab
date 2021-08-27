@@ -50,7 +50,7 @@ const Dashboard = (props) => {
                             <Link to ={`/experiments/${experiment._id}`}>{experiment.experimentName} </Link>
                              </td>
                              <td>
-                                 {experiment.allStatus}
+                                 {experiment.status}
                               {/* {experiment.experimentDescription} */}
                              </td>
                             

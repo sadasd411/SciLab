@@ -34,11 +34,13 @@ const RegisterUser = props => {
         axios.post("http://localhost:8000/api/users/register", 
         user,             // the user state is already an object with the correct keys and values!
         {
+            
             // this will force the sending of the credentials / cookies so they can be updated
             //    XMLHttpRequest from a different domain cannot set cookie values for their own domain 
             //    unless withCredentials is set to true before making the request
             withCredentials: true,
         })
+       
         .then((res) => {
             console.log(res.data);
 
@@ -59,6 +61,7 @@ const RegisterUser = props => {
             
         })
         .catch((err) => {
+            console.log(user);
             console.log(err);
             console.log(err.response.data);
             setErrs(err.response.data.errors);

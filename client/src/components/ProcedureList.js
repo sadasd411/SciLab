@@ -5,10 +5,6 @@ import Navigator from './Navigator'
 
 const ListAllProcedure = (props) => {
     const [allProcedures, setAllProcedures] = useState([]);
-    
-    
-    
-
     useEffect(() =>{
         axios.get("http://localhost:8000/api/procedures/")
         .then((res) =>{
@@ -24,7 +20,6 @@ const ListAllProcedure = (props) => {
         
         <div>
             <div>
-                {/* <button className="linkToRight"><Link to ={"/experiment"}>Add Experiment</Link></button> */}
                 <div className = "leftNav">
                 <Navigator />
                 {/* {
@@ -48,13 +43,10 @@ const ListAllProcedure = (props) => {
                             <td>
                             {procedure.procedureName}
                              </td>
-                             
                             <td>
-                            <Link to ={`/procedure/${procedure._id}`}>details </Link>
+                            <Link to ={`/procedures/${procedure._id}`}>details </Link>
                             <span>|</span>
                             <Link to ={`/procedures/${procedure._id}/edit`}> edit</Link>
-                            <span>|</span>
-                            <Link to ={`/procedure/`}> add</Link>
                             </td>
                         </tr>
                 ))}
