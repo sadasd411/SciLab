@@ -11,12 +11,21 @@ const AllExperiments = (props) => {
     const [ curUserEmail, setCurUserEmail ] = useState(localStorage.getItem('curUserEmail'));
 
     const [allExperiments, setAllExperiments] = useState([]);
+    const [allProcs, setAllProcs] = useState([]);
 
     useEffect (() => {
         axios.get("http://localhost:8000/api/experiments/allExperiments")
             .then((res) => {
                 console.log(res);
                 setAllExperiments(res.data);
+            })
+            .catch((err) => {
+                console.log(err);
+            });
+        axios.get("http://localhost:8000/api/procs/allProcs")
+            .then((res) => {
+                console.log(res);
+                setAllProcs(res.data);
             })
             .catch((err) => {
                 console.log(err);
@@ -41,10 +50,11 @@ const AllExperiments = (props) => {
                 } */}
             </div>
             <div  className = "centerPage">
+                <h4 style={{color: "orange"}}>All Experiments</h4>
                 <p className = "linkParagraph">
                     <Link className="create-new" to = "/experiments/new" >New Experiment</Link>
-                    <Link className="create-new" to = "/procedures/new" >New Procedure</Link>
-                    <Link className="create-new" to = "/experiments/new" >New Report</Link>
+                    <Link className="create-new" to = "/procs/new" >New Procedure</Link>
+                    <Link className="create-new" to = "/reports/new" >New Report</Link>
                 </p>
                 {/* <h4>All Experiments</h4> */}
                 <table>
@@ -57,7 +67,7 @@ const AllExperiments = (props) => {
                     </thead>
                     <tbody>
                         {
-                            allExperiments.map((experiment, index) => (  
+                            allExperiments.map((experiment, index) => (
                                 <tr key={index}>
                                     <td>
                                         {experiment.experimentNumber}
@@ -76,8 +86,17 @@ const AllExperiments = (props) => {
                                         <DeleteExperiment experimentId = {experiment._id} afterDelete = {updateAfterDelete}/> 
                                     </td>
                                 </tr>
-                            ))
-                        }
+                                // <tr>
+                                //     {
+                                //         // let filteredProcsArray = 
+                                //             allProcs.filter((procObj) => {
+                                //                 return procObj.expNum === experiment.expNum
+                                //             })
+                                //             // setAllProcs(filteredProcsArray);
+                                //     }
+                                // </tr>
+                                ))
+                        }  
                     </tbody>
                 </table>
             </div>

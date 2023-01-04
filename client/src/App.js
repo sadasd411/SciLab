@@ -12,6 +12,16 @@ import EditExperiment from './components/EditExperiment';
 import AllExperiments from './components/AllExperiments';
 import DeleteExperiment from './components/DeleteExperiment';
 import FileUpload from './components/FileUpload';
+import ProcNew from './components/ProcNew';
+import ProcAll from './components/ProcAll';
+import ProcDetail from './components/ProcDetail';
+import ProcEdit from './components/ProcEdit';
+
+import ReportNew from './components/ReportNew';
+import ReportEdit from './components/ReportEdit';
+import ReportAll from './components/ReportAll';
+import ReportDetails from './components/ReportDetails';
+
 
 import Dashboard from './components/Dashboard';
 import AllProcedures from './components/ProcedureList';
@@ -20,8 +30,8 @@ import CreateProcedure from './components/ProcedureNew';
 import ProcedureDetail from './components/ProcedureDetail';
 
 
-import AllReports from './components/AllReports';
-import CreateReport from './components/CreateReport';
+// import AllReports from './components/AllReportsShane';
+// import CreateReport from './components/CreateReport';
 
 
 function App() {
@@ -49,8 +59,18 @@ function App() {
         <DeleteExperiment path = "/experiments/:id/delete" />
         <RegisterUser path = "/register" />
         <Login path="/login" setUser = {setUser}/> 
-        <AllReports path = "/reports/allReports" />
-        <CreateReport path = "/reports/new" />
+        {/* <AllReports path = "/reports/allReports" />
+        <CreateReport path = "/reports/new" /> */}
+
+        <ProcNew path = "/procs/new" />
+        <ProcAll path = "/procs/allProcs" />
+        <ProcDetail path = "/procs/:id/" />
+        <ProcEdit path = "/procs/:id/edit" />
+
+        <ReportNew path = "/reports/new" />
+        <ReportEdit path = "/reports/:id/edit" />
+        <ReportAll path = "/reports/allReports" />
+        <ReportDetails path = "/reports/:id/" />
 
       </Router>
     </div>

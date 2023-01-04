@@ -28,7 +28,7 @@ const ExperimentDetail = (props) => {
                 <table>
                     <tr className="trDetails">
                         <td className="tdDetails">Experiment #:</td>
-                        <td className="tdDetails">exp num not showing up{experiment.experimentNumber}</td>
+                        <td className="tdDetails">{experiment.experimentNumber}</td>
                     </tr>
                     <tr>
                         <td>Experiment Name:</td>
@@ -64,6 +64,9 @@ const ExperimentDetail = (props) => {
                     </tr>
                 </table>
                 <button onClick={(e) => navigate(`/experiments/${experiment._id}/edit`)} className="editBtn">Edit</button>
+                {/* <div>
+                    <FileUpload />
+                </div> */}
             </div>
         </div>
     )

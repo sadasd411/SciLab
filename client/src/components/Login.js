@@ -29,7 +29,7 @@ const Login = (props) => {
             .then((res) => {
                 console.log("res.data: ", res.data);
                 setUser(res.data);
-                localStorage.setItem('curUserName', res.data.userName);
+                localStorage.setItem('curUserName', res.data.userLoggedIn);
                 localStorage.setItem('curUserEmail', res.data.userEmail);
                 navigate("/experiments/allExperiments");
                 

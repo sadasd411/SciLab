@@ -14,13 +14,14 @@ const Navigator = (props) => {
     return (
             <div className = "leftNav">
                 <p className="welcome-p">
-                    Welcome!
-                    {/* {curUserName ? "Welcome, " + curUserName + "!" : "Welcome!"}  */}
+                    {curUserName ? "Welcome, " + curUserName + "!" : "Welcome!"} 
                 </p>
                 <p><Link className = "leftNavLinks" to="/dashboard">Dashboard</Link></p>                
-                <p><Link className = "leftNavLinks" to="/experiments/allExperiments">Experiments</Link></p>                
-                <p><Link className = "leftNavLinks" to="/procedures/allProcedures">Procedures</Link></p>
+                <p><Link className = "leftNavLinks" to="/experiments/allExperiments">Experiments</Link></p> 
+                <p><Link className = "leftNavLinks" to="/procs/allProcs">Procedures</Link></p>
                 <p><Link className = "leftNavLinks" to="/reports/allReports">Reports</Link></p>
+                {/* <p><Link className = "leftNavLinks" to="/procedures/allProcedures">Procedures</Link></p>
+                <p><Link className = "leftNavLinks" to="/reports/allReports">Reports</Link></p> */}
                 {/* {curUserEmail==="admin@scilab.com" ? "/experiments/allExperiments" : "/experiments/filteredExperiments"} */}
             </div>
     )

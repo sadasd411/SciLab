@@ -29,6 +29,8 @@ require('./routes/procedure.route')(app);
 
 require('./routes/user.routes')(app);           // this shud be fine coz using for login.
 // require('./routes/dashboard.routes')(app);        // dashboard here, check the name for this one.
+require('./routes/proc.routes')(app);
+require('./routes/report.routes')(app);
 
 // set up the server for listening
 app.listen(port, () => {

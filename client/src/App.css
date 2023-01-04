@@ -37,6 +37,7 @@ h1{
 }
 table {
   border-collapse: collapse;
+  border: 1px solid black;
   /* margin: 20px 10px; */
   /* width:600;
   justify-content:space-between; */
@@ -46,6 +47,7 @@ th {
   padding: 5px 0px;
   color: black;
   background-color: #8d8d92;
+  border: 1px solid black;
 }
 td, th {
   border: 1px solid black;
@@ -610,12 +612,14 @@ table {
 th {
 	/* padding: 12px 0px; */
 	color: white;
+	border: 1px solid black;
 }
 
 td, th {
 	font-size: small;
 	border: 1px solid darkgray;
 	padding: 5px;
+	border: 1px solid black;
 }
 
 .displayAll tr:nth-child(even) {
